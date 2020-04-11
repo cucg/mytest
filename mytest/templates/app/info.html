@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>体温上传</title>
+</head>
+<body>
+<form method ="post" action="infoupload">
+<h1>体温检测上报</h1>
+姓名：<input type="text" name="name" placeholder="姓名"><br>
+年龄：<input type="text" name="age" placeholder="年龄"> <br>
+体温：<input type="text" name="tem" placeholder="体温"> <br>
+位置：<input type="text" name="place" placeholder="位置"> <br>
+<font color="red">{%if msg%}{{msg}}{%endif%}</font> <br>
+<button type="submit">上传信息</button>
+</form>
+</body>
+</html>
