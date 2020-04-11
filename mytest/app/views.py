@@ -2,7 +2,6 @@ import json
 from django.shortcuts import render
 from django.views.generic import View
 from app import models
-from app import core
 
 # Create your views here.
 
