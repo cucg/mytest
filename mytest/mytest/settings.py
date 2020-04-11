@@ -139,7 +139,7 @@ STATIC_URL = '/static/'
 # 运行定时函数
 CRONJOBS = [
     # 每天00：00执行命令,将日志写入文件
-    ('*/1 * * * *','app.core.task','>> /root/mytest/mytest/test_crontab.log'),
+    ('0 0 * * *','app.core.task','>> /root/mytest/mytest/test_crontab.log'),
 
    ]
 
