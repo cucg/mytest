@@ -25,7 +25,7 @@ SECRET_KEY = 'q_p8xmdg7wl=wtbr3*dgn*lkvhmtgs#$pb7ex02mv-3*w!(&+2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -136,15 +136,20 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+# 运行定时函数
 CRONJOBS = [
-     # 表示每天00：00执行
-    ('/1 * * * *', 'app.core.task')
-]
+    # 每天00：00执行命令,将日志写入文件
+    ('*/1 * * * *','app.core.task','>> /root/mytest/mytest/test_crontab.log'),
+
+   ]
+
+# 支持中文
+CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
 
 # 发邮件配置
 EMAIL_USE_SSL = True
 EMAIL_HOST = 'smtp.qq.com'  # 如果是 163 改成 smtp.163.com
 EMAIL_PORT = 465
 EMAIL_HOST_USER = '814972189@qq.com' # 帐号
-EMAIL_HOST_PASSWORD = 'ymdpxpfwkzbvbbag'  # 授权码
+EMAIL_HOST_PASSWORD = 'mfcaxhrvyjeubdja'  # 授权码
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
